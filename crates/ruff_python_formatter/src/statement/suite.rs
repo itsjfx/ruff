@@ -237,7 +237,7 @@ impl FormatRule<Suite, PyFormatContext<'_>> for FormatSuite {
                     if !is_preceding_stub_function_without_empty_line {
                         match self.kind {
                             SuiteKind::TopLevel => {
-                                write!(f, [empty_line(), empty_line()])?;
+                                write!(f, [empty_line()])?;
                             }
                             SuiteKind::Function | SuiteKind::Class | SuiteKind::Other { .. } => {
                                 empty_line().fmt(f)?;
